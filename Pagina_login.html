@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./imagens/logo1.png">
+    <title>Login - O Mundo dos Sussurros</title>
+    <link rel="stylesheet" href="./Estilo_login.css">
+</head>
+<body class="pagina_login">
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="h2_login">Login</h1>
+            <form id="login-form">
+                <div class="textobox">
+                    <input type="text" placeholder="Usuário" name="username" id="username" required>
+                </div>
+                <div class="textobox senha-container">
+                    <input type="password" placeholder="Senha" name="password" id="password" required>
+                    <input type="checkbox" id="show-password" onclick="mostrarSenha()" class="checkbox">
+                </div>
+                <button type="submit" class="btn-login">Entrar</button>
+                <div id="error-message" style="color: red; display: none;">Usuário ou senha inválidos. Tente novamente.</div>
+                <div class="links">
+                    <a href="./Pagina_cadastros.html" class="register-link">Cadastrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar/ocultar a senha
+        function mostrarSenha() {
+            var senha = document.getElementById("password");
+            var checkbox = document.getElementById("show-password");
+            if (checkbox.checked) {
+                senha.type = "text";
+            } else {
+                senha.type = "password";
+            }
+        }
+
+        // Função para redirecionar se o usuário for encontrado
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário padrão
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Verificar se o usuário existe no localStorage
+            var user = JSON.parse(localStorage.getItem(username));
+
+            if (user && user.senha === password) {
+                // Redireciona para a página inicial se os dados estiverem corretos
+                window.location.href = "./index.html";
+            } else {
+                // Exibe mensagem de erro
+                document.getElementById("error-message").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
