@@ -1,0 +1,202 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #385169;
+    font-weight: bold;
+}
+
+label {
+    color: #333;
+    font-weight: bold;
+}
+
+#salvar{
+    background-color: #ea87f3;
+    border-color: #ea87f3;
+    cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #24345f;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ea87f3 !important;
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ea87f3 !important;
+}
+
+/*Tema Azul Claro*/  
+body[data-theme="azulclaro"] {
+    background-color: #ffffff; 
+    color: #0a3d62;            
+  }
+  body[data-theme="azulclaro"] .navbar {
+    background-color: #0a3d62;
+  }
+  body[data-theme="azulclaro"] .container-fluid {
+    background-color: #0a3d62;
+  }
+  body[data-theme="azulclaro"] footer {
+    background-color: #0a3d62;
+  }
+  body[data-theme="azulclaro"] .navbar-brand {
+    color: #3c91e6 !important;
+  }
+  body[data-theme="azulclaro"] #salvar {
+    background-color: #3c91e6;
+    border-color: #3c91e6;
+    color: white;
+}
+  /* Tema Rosa */
+  body[data-theme="rosa"] {
+    background-color: #ffffff;
+    color: #c2185b;  
+  }
+  body[data-theme="rosa"] .container-fluid {
+    background-color: #c2185b;
+  }
+  body[data-theme="rosa"] .navbar{
+    background-color: #c2185b;
+  }
+  body[data-theme="rosa"] footer {
+    background-color: #c2185b;
+  }
+/* Tema Rosa */
+body[data-theme="rosa"] #salvar {
+    background-color: #c2185b;
+    border-color: #c2185b;
+    color: white;
+}
+
+  /*Tema Amarelo*/
+  body[data-theme="amarelo"] {
+    background-color: #ffffff;
+    color: #f9a825;
+  }
+  body[data-theme="amarelo"] .container-fluid {
+    background-color: #f9a825;
+  }
+  body[data-theme="amarelo"] .navbar{
+    background-color: #f9a825;
+  }
+  body[data-theme="amarelo"] footer {
+    background-color: #f9a825;
+  }
+  body[data-theme="amarelo"] .navbar-brand {
+    color: #e9e5d3 !important;
+  }
+body[data-theme="amarelo"] #salvar {
+    background-color: #f9a825;
+    border-color: #f9a825;
+    color: white;
+}
+  /*Tema Laranja*/
+  body[data-theme="laranja"] {
+    background-color: #ffffff;
+    color: #ef6c00; 
+  }
+  body[data-theme="laranja"] .navbar{
+    background-color: #ef6c00;
+}
+body[data-theme="laranja"] footer{
+  background-color: #ef6c00;
+}
+body[data-theme="laranja"] .container-fluid{
+  background-color: #ef6c00;
+}
+
+  body[data-theme="laranja"] .navbar-brand {
+    color: #ffc400 !important;
+  }
+  /* Tema Laranja */
+body[data-theme="laranja"] #salvar {
+    background-color: #ef6c00;
+    border-color: #ef6c00;
+    color: white;
+}
+  /*Tema verde*/
+  body[data-theme="verde"] {
+    background-color: #ffffff;
+    color: #2e7d32; 
+  }
+  body[data-theme="verde"] .navbar{
+    background-color: #2e7d32;
+  }
+  body[data-theme="verde"] .container-fluid{
+    background-color: #2e7d32;
+  }
+  body[data-theme="verde"] footer{
+    background-color: #2e7d32;
+  }
+  body[data-theme="verde"] .navbar-brand {
+    color: #3ce658 !important;
+  }
+  body[data-theme="verde"] #salvar {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    color: white;
+}
+/*Tema escuro*/
+  body[data-theme="dark"] {
+    background-color: #8b8888;
+    color: #ffffff;
+  }
+  body[data-theme="dark"] .navbar{
+    background-color: #333333;
+  }
+  body[data-theme="dark"] .container-fluid{
+    background-color: #333333;
+  }
+  body[data-theme="dark"] footer{
+    background-color: #333333;
+  }
+  body[data-theme="dark"] .navbar-brand {
+    color: #ffffff !important;
+  }
+  body[data-theme="dark"] #salvar {
+    background-color: #444;
+    border-color: #444;
+    color: white;
+}
+/*Tema padrão*/
+body[data-theme="padrao"] {
+  background-color: #ffffff;
+  color: #000000;
+}
+body[data-theme="padrao"] .navbar{
+  background-color: #24345f;
+}
+body[data-theme="padrao"] .container-fluid{
+  background-color: #24345f;
+}
+body[data-theme="padrao"] footer{
+  background-color: #24345f;
+}
+/* Tema Padrão */
+body[data-theme="padrao"] #salvar {
+    background-color: #db3ee9;
+    border-color: #a031aa;
+    color: white;
+}
+
+
+  
