@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./logo1.png">
+    <title>Cadastro - O Mundo dos Sussurros</title>
+    <link rel="stylesheet" href="./Estilo_cad.css">
+</head>
+<body class="pagina_cadastro">
+    <div class="overlay">
+        <div class="container_cadastro">
+            <form class="form-cadastro" id="form-cadastro">
+                <h2>Cadastro</h2>
+                
+                <label for="nome">User/usuário</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <!-- Caixa de seleção para mostrar a senha -->
+                <div class="mostrar-senha">
+                    <input type="checkbox" id="mostrarSenha" onclick="toggleSenha()">
+                    <label for="mostrarSenha">Mostrar Senha</label>
+                </div>
+
+                <label for="confirmaSenha">Confirmar Senha</label>
+                <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+
+                <button type="submit">Cadastrar</button>
+
+                <div id="sucesso" style="color: green; display: none;">Cadastro realizado com sucesso!</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script para alternar exibição da senha -->
+    <script>
+        // Função para alternar a visibilidade da senha
+        function toggleSenha() {
+            var senhaInput = document.getElementById("senha");
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+            } else {
+                senhaInput.type = "password";
+            }
+        }
+
+        // Função para validar a senha (mínimo de 4 números e 1 letra)
+        function validarSenha(senha) {
+            var numeroRegex = /\d/;
+            var letraRegex = /[a-zA-Z]/;
+            return numeroRegex.test(senha) && letraRegex.test(senha) && senha.length >= 4;
+        }
+
+        // Função para cadastrar usuário
+        document.getElementById("form-cadastro").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+            var confirmaSenha = document.getElementById("confirmaSenha").value;
+
+            // Verifica se a senha e a confirmação são iguais
+            if (senha !== confirmaSenha) {
+                alert("As senhas não coincidem. Tente novamente.");
+                return;
+            }
+
+            // Validação da senha
+            if (!validarSenha(senha)) {
+                alert("A senha deve ter pelo menos 4 números e 1 letra.");
+                return;
+            }
+
+            // Simulação de cadastro (salvando no localStorage)
+            localStorage.setItem(nome, JSON.stringify({email: email, senha: senha}));
+
+            // Exibe a mensagem de sucesso
+            document.getElementById("sucesso").style.display = "block";
+
+            // Redireciona para a página de login após 1 segundo
+            setTimeout(function() {
+                window.location.href = "Pagina_login.html";
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
